@@ -201,7 +201,7 @@ class _FormPageState extends State<FormPage> {
                                             decimal: true),
                                     inputFormatters: [
                                       FilteringTextInputFormatter.allow(
-                                        RegExp(r'^[1-9]|1[0-2]$'),
+                                        RegExp(r'^(1[0-2]|[1-9])$'),
                                       ),
                                     ],
                                     onChanged: (value) {

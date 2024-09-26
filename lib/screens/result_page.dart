@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:health_data_app/components/bottomContainer_bottom.dart';
 import 'package:health_data_app/constants.dart';
+import 'package:health_data_app/screens/profile_page.dart';
 import '../Components/Reusable_Bg.dart';
 
 class ResultPage extends StatelessWidget {
@@ -92,7 +93,26 @@ class ResultPage extends StatelessWidget {
                     height: 15.0,
                   ),
                   RawMaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(
+                              textColor: textColor,
+                              resultText: resultText,
+                              bmi: bmi,
+                              advise: advise,
+                              height: height,
+                              weight: weight,
+                              bodyFat: bodyFat,
+                              muscleMass: muscleMass,
+                              visceralFat: visceralFat,
+                              basalMetabolism: basalMetabolism,
+                              selectedGender: selectedGender,
+                              selectedDate: selectedDate),
+                        ),
+                      );
+                    },
                     constraints: BoxConstraints.tightFor(
                       width: 200.0,
                       height: 56.0,
@@ -102,7 +122,7 @@ class ResultPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)),
                     child: Text(
-                      'SAVE RESULT',
+                      'CHECK PROFILE',
                       style: kBodyTextStyle,
                     ),
                   ),
